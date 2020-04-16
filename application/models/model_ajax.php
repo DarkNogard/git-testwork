@@ -54,15 +54,15 @@ class Model_Ajax extends Model
         $employeeData = array();
         while( $employee = mysqli_fetch_assoc($result) ) {
             $empRows = array();
-            if($employee['status']==1){$status = '<div>Выполнено</div>';} else {$status = '';}
-            if($employee['date_edit']){$edited = '<div>отредактировано администратором</div>';} else {$edited = '';}
+            if($employee['status']==1){$status = '<div type="button" class="btn btn-success status mr-1">Выполнено</div>';} else {$status = '';}
+            if($employee['date_edit']){$edited = '<div type="button" class="btn btn-primary status">отредактировано администратором</div>';} else {$edited = '';}
             $empRows[] = $employee['id'];
             $empRows[] = ucfirst($employee['author']);
             $empRows[] = $employee['email'];
             $empRows[] = htmlspecialchars($employee['description']);
             $empRows[] = $status.$edited;
-            $empRows[] = '<button type="button" name="update" id="'.$employee["id"].'" class="btn btn-warning btn-xs update">Update</button>';
-            $empRows[] = '<button type="button" name="delete" id="'.$employee["id"].'" class="btn btn-danger btn-xs delete" >Delete</button>';
+            $empRows[] = '<button type="button" name="update" id="'.$employee["id"].'" class="btn btn-warning btn-xs update">Редактировать</button>';
+            $empRows[] = '<button type="button" name="delete" id="'.$employee["id"].'" class="btn btn-danger btn-xs delete" >Удалить</button>';
             $employeeData[] = $empRows;
         }
         $output = array(

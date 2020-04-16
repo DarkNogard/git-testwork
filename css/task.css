@@ -158,3 +158,18 @@ h1, h2, h3, h4, h5, h6 {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+div.btn.status {
+  font-size: 0.7rem!important;
+  cursor: default;
+  pointer-events: none;
+}
+
+.status.btn-success:hover {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.status.btn-primary:hover {
+  background-color: #007bff;
+  border-color: #007bff;
+}
